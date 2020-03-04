@@ -15,7 +15,7 @@ namespace Registration_Appication
         static int female17 = 0;
         static int male18 = 0;
         static int female18 = 0;
-
+        private char[] groupNames = {'a','b','c','d','e','f','g','h','i','j'};
 
         public Form1()
         {
@@ -37,8 +37,35 @@ namespace Registration_Appication
             {
                 MessageBox.Show("Please select the Gender!", "Invalid input", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+            else
+            {
+                if (combo18Batch.Text == "" && radioMale.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[male17].ToString();
+                    txtColor.Text = male17.ToString();
+                    male17 = (male17 + 1) % 10;
+                }
+                else if(combo18Batch.Text == "" && radioFemale.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[female17].ToString();
+                    txtColor.Text = female17.ToString();
+                    female17 = (female17 + 1) % 10;
+                }
+                else if (combo17Batch.Text == "" && radioMale.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[male18].ToString();
+                    txtColor.Text = male18.ToString();
+                    male18 = (male18 + 1) % 10;
+                }
+                else if (combo17Batch.Text == "" && radioFemale.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[female18].ToString();
+                    txtColor.Text = female18.ToString();
+                    female18 = (female18 + 1) % 10;
+                }
+            }
 
-
+            
 
             //Clear the inputs
             combo17Batch.Text = "";
@@ -67,7 +94,33 @@ namespace Registration_Appication
             {
                 MessageBox.Show("Please Insert the Gender", "INvalid input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            else
+            {
+                if (radio17BatchEmg.Checked == true && radioMaleEmg.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[male17].ToString();
+                    txtColor.Text = male17.ToString();
+                    male17 = (male17 + 1) % 10;
+                }
+                else if (radio17BatchEmg.Checked == true && radioFemaleEmg.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[female17].ToString();
+                    txtColor.Text = female17.ToString();
+                    female17 = (female17 + 1) % 10;
+                }
+                else if (radio18BatchEmg.Checked == true && radioMaleEmg.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[male18].ToString();
+                    txtColor.Text = male18.ToString();
+                    male18 = (male18 + 1) % 10;
+                }
+                else if (radio18BatchEmg.Checked == true && radioFemaleEmg.Checked == true)
+                {
+                    txtGroupName.Text = groupNames[female18].ToString();
+                    txtColor.Text = female18.ToString();
+                    female18 = (female18 + 1) % 10;
+                }
+            }
 
 
             //Clear the inputs
