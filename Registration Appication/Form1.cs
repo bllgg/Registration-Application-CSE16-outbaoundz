@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace Registration_Appication
 {
-    public partial class Form1 : Form
+    public partial class frmReg : Form
     {
         static int male17 = 0;
         static int female17 = 0;
         static int male18 = 0;
         static int female18 = 0;
-        private char[] groupNames = {'a','b','c','d','e','f','g','h','i','j'};
+        private string[] groupNames = {"a","b","c","d","e","f","g","h","i","j"};
 
-        public Form1()
+        public frmReg()
         {
             InitializeComponent();
         }

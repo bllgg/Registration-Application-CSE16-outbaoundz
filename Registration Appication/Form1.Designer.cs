@@ -1,6 +1,6 @@
 ﻿namespace Registration_Appication
 {
-    partial class Form1
+    partial class frmReg
     {
         /// <summary>
         /// Required designer variable.
@@ -567,7 +567,7 @@
             this.txtColor.Size = new System.Drawing.Size(134, 20);
             this.txtColor.TabIndex = 8;
             // 
-            // Form1
+            // frmReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -581,9 +581,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSbmt);
             this.Controls.Add(this.btnUndo);
-            this.Name = "Form1";
+            this.Name = "frmReg";
             this.Text = "Registration";
-            //this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
