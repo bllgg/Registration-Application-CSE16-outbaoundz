@@ -15,7 +15,8 @@ namespace Registration_Appication
         static int female17 = 0;
         static int male18 = 0;
         static int female18 = 0;
-        private char[] groupNames = {'a','b','c','d','e','f','g','h'};
+        private string[] groupNames = { "Beeston", "Carlton", "Arnold", "Selston", "Clifton", "Retford", "Calverton", "Ollerton" };
+        private string[] groupColors = { "Dark green", "Light green", "Dark blue", "Light blue", "Orange", "Yellow", "Red", "white"};
 
         public Form1()
         {
@@ -23,6 +24,7 @@ namespace Registration_Appication
         }
         DataTable dt;
         DataRow dr;
+        int status_flag;
         
         private void btnSbmt_Click(object sender, EventArgs e)
         {
@@ -48,9 +50,7 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch17;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[male17].ToString();
-                        txtColor.Text = male17.ToString();
-                        male17 = (male17 + 1) % 8;
+                        status_flag = 1;
 
                         dr["Index"] = combo17Batch.Text;
                         dr["gender"] = "Male";
@@ -61,9 +61,7 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch17;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[female17].ToString();
-                        txtColor.Text = female17.ToString();
-                        female17 = (female17 + 1) % 8;
+                        status_flag = 2;
 
                         dr["Index"] = combo17Batch.Text;
                         dr["gender"] = "Female";
@@ -74,9 +72,7 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch18;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[male18].ToString();
-                        txtColor.Text = male18.ToString();
-                        male18 = (male18 + 1) % 8;
+                        status_flag = 3;
 
                         dr["Index"] = combo18Batch.Text;
                         dr["gender"] = "Male";
@@ -87,9 +83,7 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch18;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[female18].ToString();
-                        txtColor.Text = female18.ToString();
-                        female18 = (female18 + 1) % 8;
+                        status_flag = 4;
 
                         dr["Index"] = combo18Batch.Text;
                         dr["gender"] = "Female";
@@ -104,8 +98,35 @@ namespace Registration_Appication
                 }
                 catch
                 {
+                    status_flag = 0;
                     MessageBox.Show("Duplicate record number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                if (status_flag == 1)
+                {
+                    txtGroupName.Text = groupNames[male17].ToString();
+                    txtColor.Text = groupColors[male17].ToString();
+                    male17 = (male17 + 1) % 8;
+                }
+                else if (status_flag == 2)
+                {
+                    txtGroupName.Text = groupNames[female17].ToString();
+                    txtColor.Text = groupColors[female17].ToString();
+                    female17 = (female17 + 1) % 8;
+                }
+                else if (status_flag == 3)
+                {
+                    txtGroupName.Text = groupNames[male18].ToString();
+                    txtColor.Text = groupColors[male18].ToString();
+                    male18 = (male18 + 1) % 8;
+                }
+                else if (status_flag == 4)
+                {
+                    txtGroupName.Text = groupNames[female18].ToString();
+                    txtColor.Text = groupColors[female18].ToString();
+                    female18 = (female18 + 1) % 8;
+                }
+
             }
             
 
@@ -146,10 +167,8 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch17;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[male17].ToString();
-                        txtColor.Text = male17.ToString();
-                        male17 = (male17 + 1) % 8;
-
+                        status_flag = 1;
+                        
                         dr["Index"] = txtIdxEmg.Text;
                         dr["gender"] = "Male";
                     }
@@ -159,10 +178,8 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch17;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[female17].ToString();
-                        txtColor.Text = female17.ToString();
-                        female17 = (female17 + 1) % 8;
-
+                        status_flag = 2;
+                        
                         dr["Index"] = txtIdxEmg.Text;
                         dr["gender"] = "Female";
                     }
@@ -172,10 +189,8 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch18;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[male18].ToString();
-                        txtColor.Text = male18.ToString();
-                        male18 = (male18 + 1) % 8;
-
+                        status_flag = 3;
+                        
                         dr["Index"] = txtIdxEmg.Text;
                         dr["gender"] = "Male";
                     }
@@ -185,10 +200,8 @@ namespace Registration_Appication
                         dt = attendanceDataSet.batch18;
                         dr = dt.NewRow();
 
-                        txtGroupName.Text = groupNames[female18].ToString();
-                        txtColor.Text = female18.ToString();
-                        female18 = (female18 + 1) % 8;
-
+                        status_flag = 4;
+                        
                         dr["Index"] = txtIdxEmg.Text;
                         dr["gender"] = "Female";
                     }
@@ -199,7 +212,33 @@ namespace Registration_Appication
                 }
                 catch
                 {
+                    status_flag = 0;
                     MessageBox.Show("Duplicate record number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (status_flag == 1)
+                {
+                    txtGroupName.Text = groupNames[male17].ToString();
+                    txtColor.Text = groupColors[male17].ToString();
+                    male17 = (male17 + 1) % 8;
+                }
+                else if(status_flag == 2)
+                {
+                    txtGroupName.Text = groupNames[female17].ToString();
+                    txtColor.Text = groupColors[female17].ToString();
+                    female17 = (female17 + 1) % 8;
+                }
+                else if (status_flag == 3)
+                {
+                    txtGroupName.Text = groupNames[male18].ToString();
+                    txtColor.Text = groupColors[male18].ToString();
+                    male18 = (male18 + 1) % 8;
+                }
+                else if (status_flag == 4)
+                {
+                    txtGroupName.Text = groupNames[female18].ToString();
+                    txtColor.Text = groupColors[female18].ToString();
+                    female18 = (female18 + 1) % 8;
                 }
 
             }
