@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnSbmt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,11 +54,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
+            this.attendanceDataSet = new Registration_Appication.AttendanceDataSet();
+            this.batch17BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.batch17TableAdapter = new Registration_Appication.AttendanceDataSetTableAdapters.batch17TableAdapter();
+            this.batch18BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.batch18TableAdapter = new Registration_Appication.AttendanceDataSetTableAdapters.batch18TableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attendanceDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.batch17BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUndo
@@ -567,6 +576,29 @@
             this.txtColor.Size = new System.Drawing.Size(134, 20);
             this.txtColor.TabIndex = 8;
             // 
+            // attendanceDataSet
+            // 
+            this.attendanceDataSet.DataSetName = "AttendanceDataSet";
+            this.attendanceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // batch17BindingSource
+            // 
+            this.batch17BindingSource.DataMember = "batch17";
+            this.batch17BindingSource.DataSource = this.attendanceDataSet;
+            // 
+            // batch17TableAdapter
+            // 
+            this.batch17TableAdapter.ClearBeforeFill = true;
+            // 
+            // batch18BindingSource
+            // 
+            this.batch18BindingSource.DataMember = "batch18";
+            this.batch18BindingSource.DataSource = this.attendanceDataSet;
+            // 
+            // batch18TableAdapter
+            // 
+            this.batch18TableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,9 +613,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSbmt);
             this.Controls.Add(this.btnUndo);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.batch18BindingSource, "Index", true));
             this.Name = "Form1";
             this.Text = "Registration";
-            //this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -594,6 +627,9 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attendanceDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.batch17BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,6 +662,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.TextBox txtColor;
+        private AttendanceDataSet attendanceDataSet;
+        private System.Windows.Forms.BindingSource batch17BindingSource;
+        private AttendanceDataSetTableAdapters.batch17TableAdapter batch17TableAdapter;
+        private System.Windows.Forms.BindingSource batch18BindingSource;
+        private AttendanceDataSetTableAdapters.batch18TableAdapter batch18TableAdapter;
     }
 }
 
