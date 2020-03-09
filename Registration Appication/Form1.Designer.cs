@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnUndo = new System.Windows.Forms.Button();
             this.btnSbmt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.combo18Batch = new System.Windows.Forms.ComboBox();
@@ -40,7 +39,6 @@
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnUndoEmg = new System.Windows.Forms.Button();
             this.btnSbmtEmg = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.radio18BatchEmg = new System.Windows.Forms.RadioButton();
@@ -68,16 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.batch17BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.Location = new System.Drawing.Point(643, 175);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(75, 23);
-            this.btnUndo.TabIndex = 0;
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.UseVisualStyleBackColor = true;
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnSbmt
             // 
@@ -429,7 +417,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnUndoEmg);
             this.groupBox3.Controls.Add(this.btnSbmtEmg);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
@@ -441,16 +428,6 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Excluded Data";
-            // 
-            // btnUndoEmg
-            // 
-            this.btnUndoEmg.Location = new System.Drawing.Point(405, 140);
-            this.btnUndoEmg.Name = "btnUndoEmg";
-            this.btnUndoEmg.Size = new System.Drawing.Size(75, 23);
-            this.btnUndoEmg.TabIndex = 5;
-            this.btnUndoEmg.Text = "Undo";
-            this.btnUndoEmg.UseVisualStyleBackColor = true;
-            this.btnUndoEmg.Click += new System.EventHandler(this.btnUndoEmg_Click);
             // 
             // btnSbmtEmg
             // 
@@ -547,7 +524,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(662, 252);
+            this.label4.Location = new System.Drawing.Point(662, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 5;
@@ -556,7 +533,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(662, 330);
+            this.label5.Location = new System.Drawing.Point(662, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 6;
@@ -564,16 +541,17 @@
             // 
             // txtGroupName
             // 
-            this.txtGroupName.Location = new System.Drawing.Point(665, 278);
+            this.txtGroupName.Location = new System.Drawing.Point(665, 252);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(134, 20);
             this.txtGroupName.TabIndex = 7;
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(665, 360);
+            this.txtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColor.Location = new System.Drawing.Point(665, 312);
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(134, 20);
+            this.txtColor.Size = new System.Drawing.Size(134, 80);
             this.txtColor.TabIndex = 8;
             // 
             // attendanceDataSet
@@ -612,8 +590,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSbmt);
-            this.Controls.Add(this.btnUndo);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.batch18BindingSource, "Index", true));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -636,8 +614,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnSbmt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -648,7 +624,6 @@
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnUndoEmg;
         private System.Windows.Forms.Button btnSbmtEmg;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton radio18BatchEmg;

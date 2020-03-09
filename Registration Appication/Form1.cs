@@ -16,7 +16,7 @@ namespace Registration_Appication
         static int male18 = 0;
         static int female18 = 0;
         private string[] groupNames = { "Beeston", "Carlton", "Arnold", "Selston", "Clifton", "Retford", "Calverton", "Ollerton" };
-        private string[] groupColors = { "Dark green", "Light green", "Dark blue", "Light blue", "Orange", "Yellow", "Red", "white"};
+        private string[] groupColors = { "Red", "Orange", "Yellow", "Green", "Blue", "Gray", "Purple", "Brown"};
 
         public Form1()
         {
@@ -105,25 +105,29 @@ namespace Registration_Appication
                 if (status_flag == 1)
                 {
                     txtGroupName.Text = groupNames[male17].ToString();
-                    txtColor.Text = groupColors[male17].ToString();
+                    //txtColor.Text = groupColors[male17].ToString();
+                    color_func(male17);
                     male17 = (male17 + 1) % 8;
                 }
                 else if (status_flag == 2)
                 {
                     txtGroupName.Text = groupNames[female17].ToString();
-                    txtColor.Text = groupColors[female17].ToString();
+                    //txtColor.Text = groupColors[female17].ToString();
+                    color_func(female17);
                     female17 = (female17 + 1) % 8;
                 }
                 else if (status_flag == 3)
                 {
                     txtGroupName.Text = groupNames[male18].ToString();
-                    txtColor.Text = groupColors[male18].ToString();
+                    //txtColor.Text = groupColors[male18].ToString();
+                    color_func(male18);
                     male18 = (male18 + 1) % 8;
                 }
                 else if (status_flag == 4)
                 {
                     txtGroupName.Text = groupNames[female18].ToString();
-                    txtColor.Text = groupColors[female18].ToString();
+                    //txtColor.Text = groupColors[female18].ToString();
+                    color_func(female18);
                     female18 = (female18 + 1) % 8;
                 }
 
@@ -219,25 +223,29 @@ namespace Registration_Appication
                 if (status_flag == 1)
                 {
                     txtGroupName.Text = groupNames[male17].ToString();
-                    txtColor.Text = groupColors[male17].ToString();
+                    //txtColor.Text = groupColors[male17].ToString();
+                    color_func(male17);
                     male17 = (male17 + 1) % 8;
                 }
                 else if(status_flag == 2)
                 {
                     txtGroupName.Text = groupNames[female17].ToString();
-                    txtColor.Text = groupColors[female17].ToString();
+                    //txtColor.Text = groupColors[female17].ToString();
+                    color_func(female17);
                     female17 = (female17 + 1) % 8;
                 }
                 else if (status_flag == 3)
                 {
                     txtGroupName.Text = groupNames[male18].ToString();
-                    txtColor.Text = groupColors[male18].ToString();
+                    //txtColor.Text = groupColors[male18].ToString();
+                    color_func(male18);
                     male18 = (male18 + 1) % 8;
                 }
                 else if (status_flag == 4)
                 {
                     txtGroupName.Text = groupNames[female18].ToString();
-                    txtColor.Text = groupColors[female18].ToString();
+                    //txtColor.Text = groupColors[female18].ToString();
+                    color_func(female18);
                     female18 = (female18 + 1) % 8;
                 }
 
@@ -265,6 +273,42 @@ namespace Registration_Appication
             // TODO: This line of code loads data into the 'attendanceDataSet.batch17' table. You can move, or remove it, as needed.
             this.batch17TableAdapter.Fill(this.attendanceDataSet.batch17);
 
+        }
+
+        private void color_func(int code)
+        {
+            if (0 == code)
+            {
+                txtColor.BackColor = Color.Red;
+            }
+            else if (1 == code)
+            {
+                txtColor.BackColor = Color.Orange;
+            }
+            else if (2 == code)
+            {
+                txtColor.BackColor = Color.Yellow;
+            }
+            else if (3 == code)
+            {
+                txtColor.BackColor = Color.Green;
+            }
+            else if (4 == code)
+            {
+                txtColor.BackColor = Color.Blue;
+            }
+            else if (5 == code)
+            {
+                txtColor.BackColor = Color.Gray;
+            }
+            else if (6 == code)
+            {
+                txtColor.BackColor = Color.Purple;
+            }
+            else if (7 == code)
+            {
+                txtColor.BackColor = Color.Brown;
+            }
         }
     }
 }
