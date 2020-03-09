@@ -52,19 +52,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
+            this.batch18BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attendanceDataSet = new Registration_Appication.AttendanceDataSet();
             this.batch17BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.batch17TableAdapter = new Registration_Appication.AttendanceDataSetTableAdapters.batch17TableAdapter();
-            this.batch18BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.batch18TableAdapter = new Registration_Appication.AttendanceDataSetTableAdapters.batch18TableAdapter();
+            this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupsTableAdapter = new Registration_Appication.AttendanceDataSetTableAdapters.GroupsTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendanceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.batch17BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSbmt
@@ -554,6 +557,11 @@
             this.txtColor.Size = new System.Drawing.Size(134, 80);
             this.txtColor.TabIndex = 8;
             // 
+            // batch18BindingSource
+            // 
+            this.batch18BindingSource.DataMember = "batch18";
+            this.batch18BindingSource.DataSource = this.attendanceDataSet;
+            // 
             // attendanceDataSet
             // 
             this.attendanceDataSet.DataSetName = "AttendanceDataSet";
@@ -568,14 +576,18 @@
             // 
             this.batch17TableAdapter.ClearBeforeFill = true;
             // 
-            // batch18BindingSource
-            // 
-            this.batch18BindingSource.DataMember = "batch18";
-            this.batch18BindingSource.DataSource = this.attendanceDataSet;
-            // 
             // batch18TableAdapter
             // 
             this.batch18TableAdapter.ClearBeforeFill = true;
+            // 
+            // groupsBindingSource
+            // 
+            this.groupsBindingSource.DataMember = "Groups";
+            this.groupsBindingSource.DataSource = this.attendanceDataSet;
+            // 
+            // groupsTableAdapter
+            // 
+            this.groupsTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -590,7 +602,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSbmt);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.batch18BindingSource, "Index", true));
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.groupsBindingSource, "group", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "E2"));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Registration";
@@ -605,9 +617,10 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendanceDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.batch17BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.batch18BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,6 +655,8 @@
         private AttendanceDataSetTableAdapters.batch17TableAdapter batch17TableAdapter;
         private System.Windows.Forms.BindingSource batch18BindingSource;
         private AttendanceDataSetTableAdapters.batch18TableAdapter batch18TableAdapter;
+        private System.Windows.Forms.BindingSource groupsBindingSource;
+        private AttendanceDataSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
     }
 }
 

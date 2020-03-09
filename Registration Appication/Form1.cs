@@ -11,10 +11,10 @@ namespace Registration_Appication
 {
     public partial class Form1 : Form
     {
-        static int male17 = 0;
-        static int female17 = 0;
-        static int male18 = 0;
-        static int female18 = 0;
+        static int male17;
+        static int female17;
+        static int male18;
+        static int female18;
         private string[] groupNames = { "Beeston", "Carlton", "Arnold", "Selston", "Clifton", "Retford", "Calverton", "Ollerton" };
         private string[] groupColors = { "Red", "Orange", "Yellow", "Green", "Blue", "Gray", "Purple", "Brown"};
 
@@ -25,6 +25,7 @@ namespace Registration_Appication
         DataTable dt;
         DataRow dr;
         int status_flag;
+        string code;
         
         private void btnSbmt_Click(object sender, EventArgs e)
         {
@@ -104,31 +105,71 @@ namespace Registration_Appication
 
                 if (status_flag == 1)
                 {
+                    this.groupsTableAdapter.Fill(this.attendanceDataSet.Groups);
+                    dt = attendanceDataSet.Groups;
+                    code = "male_17";
+                    dr = dt.Rows.Find(code);
+                    male17 = Int32.Parse(dr["static_number"].ToString());
+
                     txtGroupName.Text = groupNames[male17].ToString();
                     //txtColor.Text = groupColors[male17].ToString();
                     color_func(male17);
                     male17 = (male17 + 1) % 8;
+
+                    dr["static_number"] = male17;
+                    dr.EndEdit();
+                    groupsTableAdapter.Update(attendanceDataSet);
                 }
                 else if (status_flag == 2)
                 {
+                    this.groupsTableAdapter.Fill(this.attendanceDataSet.Groups);
+                    dt = attendanceDataSet.Groups;
+                    code = "female_17";
+                    dr = dt.Rows.Find(code);
+                    female17 = Int32.Parse(dr["static_number"].ToString());
+
                     txtGroupName.Text = groupNames[female17].ToString();
                     //txtColor.Text = groupColors[female17].ToString();
                     color_func(female17);
                     female17 = (female17 + 1) % 8;
+
+                    dr["static_number"] = female17;
+                    dr.EndEdit();
+                    groupsTableAdapter.Update(attendanceDataSet);
                 }
                 else if (status_flag == 3)
                 {
+                    this.groupsTableAdapter.Fill(this.attendanceDataSet.Groups);
+                    dt = attendanceDataSet.Groups;
+                    code = "male_18";
+                    dr = dt.Rows.Find(code);
+                    male18 = Int32.Parse(dr["static_number"].ToString());
+
                     txtGroupName.Text = groupNames[male18].ToString();
                     //txtColor.Text = groupColors[male18].ToString();
                     color_func(male18);
                     male18 = (male18 + 1) % 8;
+
+                    dr["static_number"] = male18;
+                    dr.EndEdit();
+                    groupsTableAdapter.Update(attendanceDataSet);
                 }
                 else if (status_flag == 4)
                 {
+                    this.groupsTableAdapter.Fill(this.attendanceDataSet.Groups);
+                    dt = attendanceDataSet.Groups;
+                    code = "female_18";
+                    dr = dt.Rows.Find(code);
+                    female18 = Int32.Parse(dr["static_number"].ToString());
+
                     txtGroupName.Text = groupNames[female18].ToString();
                     //txtColor.Text = groupColors[female18].ToString();
                     color_func(female18);
                     female18 = (female18 + 1) % 8;
+
+                    dr["static_number"] = female18;
+                    dr.EndEdit();
+                    groupsTableAdapter.Update(attendanceDataSet);
                 }
 
             }
@@ -268,6 +309,8 @@ namespace Registration_Appication
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'attendanceDataSet.Groups' table. You can move, or remove it, as needed.
+            this.groupsTableAdapter.Fill(this.attendanceDataSet.Groups);
             // TODO: This line of code loads data into the 'attendanceDataSet.batch18' table. You can move, or remove it, as needed.
             this.batch18TableAdapter.Fill(this.attendanceDataSet.batch18);
             // TODO: This line of code loads data into the 'attendanceDataSet.batch17' table. You can move, or remove it, as needed.
